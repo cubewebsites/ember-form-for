@@ -8,7 +8,8 @@ const {
 
 const FormForComponent = Component.extend({
   layout,
-
+  classNameBindings: ['formClassName'],
+  formClassName: 'form-horizontal',
   tagName: 'form',
 
   submit: (object) => object.save(),

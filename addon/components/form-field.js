@@ -17,7 +17,7 @@ const {
 const FormFieldComponent = Component.extend({
   layout,
 
-  classNames: ['form-field'],
+  classNames: ['form-field','form-group'],
 
   classNameBindings: [
     'propertyIsChanged:form-field--changed',

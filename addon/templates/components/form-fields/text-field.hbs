@@ -6,6 +6,7 @@
     control=control
     update=(action update) as |f|}}
   {{f.label required=required}}
+  <div class="col-md-6 col-sm-6 col-xs-12">
   {{f.control
       accesskey=accesskey
       autocomplete=autocomplete
@@ -32,6 +33,7 @@
       tabindex=tabindex
       title=title
   }}
-  {{f.errors}}
-  {{f.hint}}
+      {{f.errors}}
+      {{f.hint}}
+  </div>
 {{/form-field}}

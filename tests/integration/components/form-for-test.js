@@ -15,7 +15,13 @@ moduleForComponent('form-for', 'Integration | Component | {{form-for}}', {
 test('It renders a form element', function(assert) {
   this.render(hbs`{{form-for}}`);
 
-  assert.equal(this.$('form').length, 1);
+  assert.equal(this.$('form.form-horizontal').length, 1);
+});
+
+test('It allows form class name to be specified',function(assert){
+  this.render(hbs`{{form-for formClassName="form-vertical"}}`);
+
+  assert.equal(this.$('form.form-vertical').length,1);
 });
 
 test('It yields an helper for rendering form components', function(assert) {
