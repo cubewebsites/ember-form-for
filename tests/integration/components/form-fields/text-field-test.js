@@ -28,3 +28,10 @@ test('A custom update action can be passed', function(assert) {
   this.render(hbs`{{form-fields/text-field propertyName object=object update=(action 'update')}}`);
   this.$('input').val('Mark').trigger('change');
 });
+
+test('The element is wrapped in Bootstrap classes', function(assert) {
+  this.render(hbs`{{form-fields/text-field propertyName object=object}}`);
+  assert.equal(this.$('div').hasClass('col-md-6'),true);
+  assert.equal(this.$('div').hasClass('col-sm-6'),true);
+  assert.equal(this.$('div').hasClass('col-xs-12'),true);
+});

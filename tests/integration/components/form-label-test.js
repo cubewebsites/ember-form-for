@@ -10,6 +10,11 @@ test('It renders', function(assert) {
   assert.equal(this.$('label').length, 1);
 });
 
+test('It has Bootstrap classes', function(assert) {
+  this.render(hbs`{{form-label}}`);
+  assert.equal(this.$('label').hasClass('control-label') && this.$('label').hasClass('col-md-3') && this.$('label').hasClass('col-sm-3') && this.$('label').hasClass('col-xs-12') && this.$('label').hasClass('col-md-3'),true);
+});
+
 test('It shows the label value', function(assert) {
   this.render(hbs`{{form-label "Foo"}}`);
   assert.equal(this.$('label').text().trim(), 'Foo');

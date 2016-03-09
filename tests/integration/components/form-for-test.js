@@ -36,7 +36,7 @@ test('It yields an helper for rendering form components', function(assert) {
 
 test('It allows form class name to be specified when using a helper', function(assert) {
   this.render(hbs`
-    {{#form-for object as |f| "form-vertical"}}
+    {{#form-for formClassName="form-vertical" object=object as |f|}}
       {{f.text-field "name"}}
     {{/form-for}}
   `);

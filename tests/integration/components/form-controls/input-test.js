@@ -92,3 +92,8 @@ test(`It's possible to bind 'spellcheck'`, function(assert) {
   this.render(hbs`{{form-controls/input spellcheck=true}}`);
   assert.equal(this.$('input').attr('spellcheck'), 'true', 'attribute spellcheck is set');
 });
+
+test(`It has a class name of 'form-control'`, function(assert) {
+  this.render(hbs`{{form-controls/input}}`);
+  assert.equal(this.$('input').hasClass('form-control'), true, 'class form-control is set');
+});
