@@ -18,10 +18,10 @@ test('It renders a form element', function(assert) {
   assert.equal(this.$('form.form-horizontal').length, 1);
 });
 
-test('It allows form class name to be specified',function(assert){
+test('It allows form class name to be specified', function(assert) {
   this.render(hbs`{{form-for formClassName="form-vertical"}}`);
 
-  assert.equal(this.$('form.form-vertical').length,1);
+  assert.equal(this.$('form.form-vertical').length, 1);
 });
 
 test('It yields an helper for rendering form components', function(assert) {
@@ -32,6 +32,16 @@ test('It yields an helper for rendering form components', function(assert) {
   `);
 
   assert.equal(this.$('form input[type="text"]').length, 1);
+});
+
+test('It allows form class name to be specified when using a helper', function(assert) {
+  this.render(hbs`
+    {{#form-for object as |f| "form-vertical"}}
+      {{f.text-field "name"}}
+    {{/form-for}}
+  `);
+
+  assert.equal(this.$('form.form-vertical').length, 1);
 });
 
 test('It puts the given attribute\'s value in the input', function(assert) {

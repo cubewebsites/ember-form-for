@@ -177,6 +177,16 @@ test('It passes invalid to the control when errors are present', function(assert
   assert.equal(this.$('input').attr('aria-invalid'), 'true');
 });
 
+test('It has a form group class', function(assert) {
+  this.render(hbs`
+    {{#form-field "givenName" object=object as |f|}}
+      {{f.control}}
+    {{/form-field}}
+  `);
+
+  assert.equal(this.$('.form-field').hasClass('form-group'), true);
+});
+
 test('It adds an error class to the field when errors are present', function(assert) {
   this.set('object.errors', { givenName: [{ message: 'can\'t be blank' }] });
 

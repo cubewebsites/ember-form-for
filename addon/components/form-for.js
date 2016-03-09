@@ -21,7 +21,7 @@ const FormForComponent = Component.extend({
 });
 
 FormForComponent.reopenClass({
-  positionalParams: ['object']
+  positionalParams: ['object','formClassName']
 });
 
 export default FormForComponent;
