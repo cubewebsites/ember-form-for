@@ -1,6 +1,6 @@
 {{yield (hash
   labelText=labelText
-  label=(component 'form-label' labelText for=fieldId form=form)
+  label=(component 'form-label' labelText for=fieldId form=form formLabelClasses=formLayoutClasses.labelClass)
   errors=(component 'form-errors' errors=(get object.errors propertyName))
   hint=(component 'form-hint' hint=hint id=fieldHintId)
   control=(component control (get object propertyName)

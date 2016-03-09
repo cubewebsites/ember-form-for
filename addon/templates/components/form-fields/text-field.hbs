@@ -1,17 +1,18 @@
 {{#form-field propertyName
-    class="text-field"
+    class=formLayoutClasses.field
     object=object
     form=form
     label=label
     control=control
     update=(action update) as |f|}}
-  {{f.label required=required}}
-  <div class="col-md-6 col-sm-6 col-xs-12">
+  {{f.label required=required class=formLayoutClasses.label}}
+  <div class="{{formLayoutClasses.inputWrapper}}">
   {{f.control
       accesskey=accesskey
       autocomplete=autocomplete
       autofocus=autofocus
       autosave=autosave
+      class=formLayoutClasses.input
       dir=dir
       disabled=disabled
       hidden=hidden

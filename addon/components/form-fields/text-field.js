@@ -6,7 +6,7 @@ const { set } = Ember;
 const TextFieldComponent = Ember.Component.extend({
   tagName: '',
   layout,
-  classNames: ['form-control'],
+  formLayoutClasses:{},
 
   control: 'form-controls/input',
 

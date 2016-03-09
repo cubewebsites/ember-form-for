@@ -4,7 +4,6 @@ const { set } = Ember;
 
 export default Ember.Component.extend({
   tagName: 'input',
-  classNames: ['form-control'],
   attributeBindings: [
     'accesskey',
     'autocomplete',
