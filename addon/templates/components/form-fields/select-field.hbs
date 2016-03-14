@@ -1,14 +1,16 @@
 {{#form-field propertyName
-    class="select-field"
+    class=formLayoutClasses.field
     object=object
     form=form
     label=label
     control=control
     update=(action update) as |f|}}
-  {{f.label required=required}}
+  {{f.label required=required class=formLayoutClasses.label}}
+  <div class="{{formLayoutClasses.inputWrapper}}">
   {{f.control
       accesskey=accesskey
       autofocus=autofocus
+      class=formLayoutClasses.input
       dir=dir
       disabled=disabled
       groupLabelPath=groupLabelPath
@@ -24,4 +26,5 @@
   }}
   {{f.errors}}
   {{f.hint}}
+</div>
 {{/form-field}}

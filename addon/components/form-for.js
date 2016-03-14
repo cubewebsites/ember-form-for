@@ -11,13 +11,7 @@ const FormForComponent = Component.extend({
     classNameBindings: ['formClassName'],
     formLayout: 'bootstrap3-horizontal',
     formLayoutClasses: function () {
-        let layoutClasses = {
-            form: '', // On the form element
-            field: '', // Around the whole field (label, control etc)
-            label: '', // On the label element
-            inputWrapper: '', // Around the field container (control, hint, errors)
-            input: '' // On the input element itself (input, select, textarea)
-        };
+        let layoutClasses = {};
         switch (this.get('formLayout')) {
             case 'bootstrap3-horizontal':
                 layoutClasses.form = 'form-horizontal';
@@ -27,10 +21,6 @@ const FormForComponent = Component.extend({
                 layoutClasses.input = 'form-control col-md-7 col-xs-12';
                 break;
             case 'bootstrap3-vertical':
-                layoutClasses.form = '';
-                layoutClasses.field = '';
-                layoutClasses.label = '';
-                layoutClasses.inputWrapper = '';
                 layoutClasses.input = 'form-control';
                 break;
         }

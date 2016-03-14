@@ -10,6 +10,10 @@
 {{else}}
   <option value={{option}}
           selected={{contains selected option}}>
-    {{option}}
+          {{#if optionLabelPath}}
+          {{get option optionLabelPath}}
+          {{else}}
+          {{option}}
+          {{/if}}
   </option>
 {{/if}}
